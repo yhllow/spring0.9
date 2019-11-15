@@ -12,9 +12,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.aopalliance.AspectException;
-import org.aopalliance.Interceptor;
-
 import com.interface21.beans.BeansException;
 import com.interface21.beans.PropertyValues;
 import com.interface21.beans.factory.BeanFactory;
@@ -22,6 +19,8 @@ import com.interface21.beans.factory.FactoryBean;
 import com.interface21.beans.factory.Lifecycle;
 import com.interface21.beans.factory.ListableBeanFactory;
 import com.interface21.core.OrderComparator;
+import org.aopalliance.aop.AspectException;
+import org.aopalliance.intercept.Interceptor;
 
 /** 
  * FactoryBean implementation for use to source AOP proxies from a Spring BeanFactory.

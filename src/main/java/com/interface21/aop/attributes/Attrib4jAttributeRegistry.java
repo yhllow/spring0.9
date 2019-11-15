@@ -5,9 +5,9 @@
  
 package com.interface21.aop.attributes;
 
-import java.lang.reflect.AccessibleObject;
+import org.aopalliance.intercept.AttributeRegistry;
 
-import org.aopalliance.AttributeRegistry;
+import java.lang.reflect.AccessibleObject;
 
 //import attrib4j.Attributes;
 
@@ -18,9 +18,6 @@ import org.aopalliance.AttributeRegistry;
  */
 public class Attrib4jAttributeRegistry implements AttributeRegistry {
 
-	/**
-	 * @see org.aopalliance.AttributeRegistry#getAttributes(java.lang.reflect.AccessibleObject)
-	 */
 	public Object[] getAttributes(AccessibleObject ao) {
 		// TODO: could cache, or want independent instances?
 //		Method m = (Method) ao;
@@ -31,9 +28,6 @@ public class Attrib4jAttributeRegistry implements AttributeRegistry {
 	}
 		
 
-	/**
-	 * @see org.aopalliance.AttributeRegistry#getAttributes(java.lang.Class)
-	 */
 	public Object[] getAttributes(Class clazz) {
 		throw new UnsupportedOperationException("Attrib4j integration not yet implemented");
 	}

@@ -5,8 +5,8 @@
  
 package com.interface21.aop.framework;
 
-import org.aopalliance.AspectException;
-import org.aopalliance.MethodInvocation;
+import org.aopalliance.aop.AspectException;
+import org.aopalliance.intercept.MethodInvocation;
 
 /**
  * Class containing static methods used to obtain

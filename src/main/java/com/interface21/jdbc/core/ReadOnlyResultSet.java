@@ -1,5 +1,7 @@
 package com.interface21.jdbc.core;
 
+import java.io.InputStream;
+import java.io.Reader;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.Calendar;
@@ -1182,4 +1184,212 @@ public class ReadOnlyResultSet implements ResultSet {
 	public void updateArray(String columnName, Array x) throws SQLException {
 		throw new InvalidResultSetMethodInvocationException("updateArray");
 	}
+
+  public RowId getRowId(int i) throws SQLException {
+    return null;
+  }
+
+  public RowId getRowId(String s) throws SQLException {
+    return null;
+  }
+
+  public void updateRowId(int i, RowId rowId) throws SQLException {
+
+  }
+
+  public void updateRowId(String s, RowId rowId) throws SQLException {
+
+  }
+
+  public int getHoldability() throws SQLException {
+    return 0;
+  }
+
+  public boolean isClosed() throws SQLException {
+    return false;
+  }
+
+  public void updateNString(int i, String s) throws SQLException {
+
+  }
+
+  public void updateNString(String s, String s1) throws SQLException {
+
+  }
+
+  public void updateNClob(int i, NClob nClob) throws SQLException {
+
+  }
+
+  public void updateNClob(String s, NClob nClob) throws SQLException {
+
+  }
+
+  public NClob getNClob(int i) throws SQLException {
+    return null;
+  }
+
+  public NClob getNClob(String s) throws SQLException {
+    return null;
+  }
+
+  public SQLXML getSQLXML(int i) throws SQLException {
+    return null;
+  }
+
+  public SQLXML getSQLXML(String s) throws SQLException {
+    return null;
+  }
+
+  public void updateSQLXML(int i, SQLXML sqlxml) throws SQLException {
+
+  }
+
+  public void updateSQLXML(String s, SQLXML sqlxml) throws SQLException {
+
+  }
+
+  public String getNString(int i) throws SQLException {
+    return null;
+  }
+
+  public String getNString(String s) throws SQLException {
+    return null;
+  }
+
+  public Reader getNCharacterStream(int i) throws SQLException {
+    return null;
+  }
+
+  public Reader getNCharacterStream(String s) throws SQLException {
+    return null;
+  }
+
+  public void updateNCharacterStream(int i, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateNCharacterStream(String s, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateAsciiStream(int i, InputStream inputStream, long l) throws SQLException {
+
+  }
+
+  public void updateBinaryStream(int i, InputStream inputStream, long l) throws SQLException {
+
+  }
+
+  public void updateCharacterStream(int i, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateAsciiStream(String s, InputStream inputStream, long l) throws SQLException {
+
+  }
+
+  public void updateBinaryStream(String s, InputStream inputStream, long l) throws SQLException {
+
+  }
+
+  public void updateCharacterStream(String s, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateBlob(int i, InputStream inputStream, long l) throws SQLException {
+
+  }
+
+  public void updateBlob(String s, InputStream inputStream, long l) throws SQLException {
+
+  }
+
+  public void updateClob(int i, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateClob(String s, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateNClob(int i, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateNClob(String s, Reader reader, long l) throws SQLException {
+
+  }
+
+  public void updateNCharacterStream(int i, Reader reader) throws SQLException {
+
+  }
+
+  public void updateNCharacterStream(String s, Reader reader) throws SQLException {
+
+  }
+
+  public void updateAsciiStream(int i, InputStream inputStream) throws SQLException {
+
+  }
+
+  public void updateBinaryStream(int i, InputStream inputStream) throws SQLException {
+
+  }
+
+  public void updateCharacterStream(int i, Reader reader) throws SQLException {
+
+  }
+
+  public void updateAsciiStream(String s, InputStream inputStream) throws SQLException {
+
+  }
+
+  public void updateBinaryStream(String s, InputStream inputStream) throws SQLException {
+
+  }
+
+  public void updateCharacterStream(String s, Reader reader) throws SQLException {
+
+  }
+
+  public void updateBlob(int i, InputStream inputStream) throws SQLException {
+
+  }
+
+  public void updateBlob(String s, InputStream inputStream) throws SQLException {
+
+  }
+
+  public void updateClob(int i, Reader reader) throws SQLException {
+
+  }
+
+  public void updateClob(String s, Reader reader) throws SQLException {
+
+  }
+
+  public void updateNClob(int i, Reader reader) throws SQLException {
+
+  }
+
+  public void updateNClob(String s, Reader reader) throws SQLException {
+
+  }
+
+  public <T> T getObject(int i, Class<T> aClass) throws SQLException {
+    return null;
+  }
+
+  public <T> T getObject(String s, Class<T> aClass) throws SQLException {
+    return null;
+  }
+
+  public <T> T unwrap(Class<T> aClass) throws SQLException {
+    return null;
+  }
+
+  public boolean isWrapperFor(Class<?> aClass) throws SQLException {
+    return false;
+  }
 }

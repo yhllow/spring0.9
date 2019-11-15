@@ -5,12 +5,12 @@
  
 package com.interface21.ejb.access;
 
-import org.aopalliance.MethodInterceptor;
 
 import com.interface21.beans.BeanWrapper;
 import com.interface21.beans.BeanWrapperImpl;
 import com.interface21.beans.factory.InitializingBean;
 import com.interface21.jndi.AbstractJndiLocator;
+import org.aopalliance.intercept.MethodInterceptor;
 
 /**
  * Superclass for all AOP interceptors invoking EJBs.

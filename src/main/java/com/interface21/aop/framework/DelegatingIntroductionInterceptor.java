@@ -8,7 +8,7 @@ package com.interface21.aop.framework;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.aopalliance.MethodInvocation;
+import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -84,16 +84,10 @@ public class DelegatingIntroductionInterceptor implements IntroductionIntercepto
 		this.publishedInterfaces.remove(intf);
 	}
 
-	/**
-	 * @see com.interface21.aop.framework.AspectInterfaceInterceptor#getAspectInterfaces()
-	 */
 	public Class[] getIntroducedInterfaces() {
 		return (Class[]) this.publishedInterfaces.toArray(new Class[this.publishedInterfaces.size()]);
 	}
 
-	/**
-	 * @see com.interface21.aop.Interceptor#invoke(Invocation)
-	 */
 	public final Object invoke(MethodInvocation invocation) throws Throwable {
 		
 		// We want this for getArguments() method

@@ -5,10 +5,10 @@
  
 package com.interface21.aop.framework;
 
-import java.lang.reflect.Method;
+import org.aopalliance.intercept.AttributeRegistry;
+import org.aopalliance.intercept.MethodInterceptor;
 
-import org.aopalliance.AttributeRegistry;
-import org.aopalliance.MethodInterceptor;
+import java.lang.reflect.Method;
 
 /**
  * MethodPointcut implementation wrapping an
@@ -31,9 +31,6 @@ public class AlwaysInvoked implements MethodPointcut {
 		return this.interceptor;
 	}
 
-	/**
-	 * @see com.interface21.aop.framework.MethodPointcut#applies(java.lang.reflect.Method, java.lang.Object[], AttributeRegistry)
-	 */
 	public boolean applies(Method m, Object[] args, AttributeRegistry ar) {
 		return true;
 	}

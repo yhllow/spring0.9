@@ -5,8 +5,8 @@
 
 package com.interface21.transaction.interceptor;
 
-import org.aopalliance.MethodInterceptor;
-import org.aopalliance.MethodInvocation;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -93,9 +93,6 @@ public class TransactionInterceptor implements MethodInterceptor {
 		this.transactionAttributeSource = transactionAttributeSource;
 	}
 
-	/**
-	 * @see org.aopalliance.MethodInterceptor#invoke(org.aopalliance.MethodInvocation)
-	 */
 	public final Object invoke(MethodInvocation invocation) throws Throwable {
 		// If this is null, the method is non-transactional
 		TransactionAttribute transAtt = this.transactionAttributeSource.getTransactionAttribute(invocation);

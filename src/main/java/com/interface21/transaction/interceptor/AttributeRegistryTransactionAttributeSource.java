@@ -5,10 +5,10 @@
 
 package com.interface21.transaction.interceptor;
 
+import org.aopalliance.intercept.MethodInvocation;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.aopalliance.MethodInvocation;
 
 /**
  * Implementation of TransactionAttributeSource that uses
@@ -19,9 +19,6 @@ import org.aopalliance.MethodInvocation;
  */
 public class AttributeRegistryTransactionAttributeSource implements TransactionAttributeSource {
 
-	/**
-	 * @see com.interface21.transaction.interceptor.TransactionAttributeSource#getTransactionAttribute(java.lang.Class, java.lang.reflect.Method)
-	 */
 	public TransactionAttribute getTransactionAttribute(MethodInvocation mi) {
 		Class targetClass = mi.getMethod().getDeclaringClass();
 		if (mi.getInvokedObject() != null) {

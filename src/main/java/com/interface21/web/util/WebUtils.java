@@ -192,12 +192,12 @@ public abstract class WebUtils {
 	 * @return properties mapping request parameters <b>without the prefix</b>
 	 */
 	public static Properties getParametersStartingWith(ServletRequest request, String base) {
-		Enumeration enum = request.getParameterNames();
+		Enumeration _enum = request.getParameterNames();
 		Properties props = new Properties();
 		if (base == null)
 			base = "";
-		while (enum != null && enum.hasMoreElements()) {
-			String paramName = (String) enum.nextElement();
+		while (_enum != null && _enum.hasMoreElements()) {
+			String paramName = (String) _enum.nextElement();
 			if (base == null || "".equals(base) || paramName.startsWith(base)) {
 				String val = request.getParameter(paramName);
 				String unprefixed = paramName.substring(base.length());

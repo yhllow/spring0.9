@@ -12,10 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.aopalliance.AttributeRegistry;
-import org.aopalliance.Interceptor;
-import org.aopalliance.MethodInterceptor;
-import org.aopalliance.ProxyInterceptor;
+import org.aopalliance.intercept.AttributeRegistry;
+import org.aopalliance.intercept.Interceptor;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.ProxyInterceptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -94,9 +94,6 @@ public class DefaultProxyConfig implements ProxyConfig, InitializingBean {
 	}
 
 
-	/** 
-	 * @see com.interface21.aop.framework.ProxyConfig#addInterceptor(org.aopalliance.Interceptor)
-	 */
 	public void addInterceptor(Interceptor interceptor) {
 		int pos = (this.pointcuts != null) ? this.pointcuts.size() : 0;
 		addInterceptor(pos, interceptor);
@@ -119,7 +116,6 @@ public class DefaultProxyConfig implements ProxyConfig, InitializingBean {
 	 * New interfaces will only be available when a new proxy is obtained
 	 * through getObject().
 	 * The same goes for removing interfaces.
-	 * @see com.interface21.aop.framework.ProxyConfig#addInterceptor(int, org.aopalliance.Interceptor)
 	 */
 	public final void addInterceptor(int pos, Interceptor interceptor) {
 		if (!(interceptor instanceof MethodInterceptor))
@@ -146,7 +142,6 @@ public class DefaultProxyConfig implements ProxyConfig, InitializingBean {
 	
 	/**
 	 * Work out target from list of interceptors
-	 * @param interceptorList list of interceptors
 	 * @throws AopConfigException if the chain is invalid
 	 */
 	private void computeTargetAndCheckValidity() throws AopConfigException {
@@ -170,7 +165,6 @@ public class DefaultProxyConfig implements ProxyConfig, InitializingBean {
 	
 	/**
 	 * Remove the given interceptor
-	 * @see com.interface21.aop.framework.ProxyConfig#removeInterceptor(org.aopalliance.Interceptor)
 	 */
 	public final boolean removeInterceptor(Interceptor interceptor) {
 		boolean removed = false;

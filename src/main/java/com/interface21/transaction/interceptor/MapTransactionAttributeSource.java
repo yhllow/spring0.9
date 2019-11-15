@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.aopalliance.MethodInvocation;
+import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -38,9 +38,6 @@ public class MapTransactionAttributeSource implements TransactionAttributeSource
 		this.methodMap.put(m, ta);
 	}
 	
-	/**
-	 * @see com.interface21.transaction.interceptor.TransactionAttributeSource#getTransactionAttribute(org.aopalliance.MethodInvocation)
-	 */
 	public TransactionAttribute getTransactionAttribute(MethodInvocation invocation) {
 		TransactionAttribute ta = (TransactionAttribute) this.methodMap.get(invocation.getMethod());
 		return ta;

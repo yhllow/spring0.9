@@ -1,8 +1,8 @@
 
 package com.interface21.aop.interceptor;
 
-import org.aopalliance.MethodInterceptor;
-import org.aopalliance.MethodInvocation;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
 
 /**
  * Trivial interceptor that can be introduced in a chain to display it.
@@ -19,9 +19,6 @@ public class DebugInterceptor implements MethodInterceptor {
 	
 	private int count;
 
-	/**
-	 * @see Interceptor#invoke(Invocation)
-	 */
 	public Object invoke(MethodInvocation invocation) throws Throwable {
 		++count;
 		System.out.println("Debug interceptor: count=" + count +

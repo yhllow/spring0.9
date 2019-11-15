@@ -7,12 +7,11 @@ import java.rmi.NotBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-import org.aopalliance.MethodInvocation;
-import org.aopalliance.MethodInterceptor;
-
 import com.interface21.aop.framework.ProxyFactory;
 import com.interface21.remoting.RemoteAccessException;
 import com.interface21.remoting.support.RemoteProxyFactoryBean;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
 
 /**
  * Factory bean for transparent RMI proxies. Behaves like the proxied service when

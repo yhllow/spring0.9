@@ -5,12 +5,12 @@ import java.net.MalformedURLException;
 
 import com.caucho.burlap.client.BurlapProxyFactory;
 import com.caucho.burlap.client.BurlapRuntimeException;
-import org.aopalliance.MethodInvocation;
-import org.aopalliance.MethodInterceptor;
 
 import com.interface21.aop.framework.ProxyFactory;
 import com.interface21.remoting.RemoteAccessException;
 import com.interface21.remoting.support.AuthorizableRemoteProxyFactoryBean;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
 
 /**
  * Factory bean for Burlap proxies. Behaves like the proxied service when

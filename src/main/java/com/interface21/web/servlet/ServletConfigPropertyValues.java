@@ -48,9 +48,9 @@ class ServletConfigPropertyValues implements PropertyValues {
 		List missingProps = (requiredProperties == null) ? new ArrayList(0) : new ArrayList(requiredProperties);
 
 		mutablePropertyValues = new MutablePropertyValues();
-		Enumeration enum = config.getInitParameterNames();
-		while (enum.hasMoreElements()) {
-			String property = (String) enum.nextElement();
+		Enumeration _enum = config.getInitParameterNames();
+		while (_enum.hasMoreElements()) {
+			String property = (String) _enum.nextElement();
 			Object value = config.getInitParameter(property);
 			mutablePropertyValues.addPropertyValue(new PropertyValue(property, value));
 			// Check it off

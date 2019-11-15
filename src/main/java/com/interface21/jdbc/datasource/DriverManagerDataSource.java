@@ -3,6 +3,8 @@ package com.interface21.jdbc.datasource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 /**
  * Implementation of SmartDataSource that configures a plain old JDBC Driver
@@ -108,4 +110,19 @@ public class DriverManagerDataSource extends AbstractDataSource implements Smart
 		return con;
 	}
 
+	@Override
+	public <T> T unwrap(Class<T> aClass) throws SQLException {
+		// TODO
+		return null;
+	}
+
+	@Override
+	public boolean isWrapperFor(Class<?> aClass) throws SQLException {
+		// TODO
+		return false;
+	}
+
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		return null;
+	}
 }

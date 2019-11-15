@@ -1,9 +1,8 @@
 
 package com.interface21.aop.interceptor;
 
-import org.aopalliance.MethodInterceptor;
-import org.aopalliance.MethodInvocation;
-
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
 
 /**
  * Should really move to context package. AOP
@@ -11,9 +10,6 @@ import org.aopalliance.MethodInvocation;
  */
 public class EventPublicationInterceptor implements MethodInterceptor {
 
-	/**
-	 * @see Interceptor#invoke(Invocation)
-	 */
 	public Object invoke(MethodInvocation invocation) throws Throwable {
 		return null;
 	}
