@@ -1,0 +1,107 @@
+/*
+ * The Spring Framework is published under the terms
+ * of the Apache Software License.
+ */
+ 
+package org.springframework.ejb.access;
+
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.PropertyValues;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.Lifecycle;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.PropertyValues;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.Lifecycle;
+
+/**
+ * Convenient factory for local or remote SLSB proxies.
+ * If you want control over interceptor chaining, use an AOP ProxyFactoryBean
+ * rather than rely on this class.
+ * @author Rod Johnson
+ * @since 09-May-2003
+ * @version $Id: LocalStatelessSessionProxyFactoryBean.java,v 1.3 2003/06/13 13:40:37 jhoeller Exp $
+ */
+public class LocalStatelessSessionProxyFactoryBean extends LocalSlsbInvokerInterceptor implements FactoryBean, Lifecycle {
+	
+	/*
+	 * Instead of a separate subclass for each type of SLSBInvoker, we could have added
+	 * this functionality to AbstractSlsbInvokerInterceptor. However, the avoiding of
+	 * code duplication would be outweighed by the confusion this would produce over the
+	 * purpose of AbstractSlsbInvokerInterceptor.
+	 */
+	
+	/** EJBLocalObject */
+	private Object proxy;
+	
+	
+	/**
+	 * The business interface of the EJB we're proxying.
+	 */
+	private Class businessInterface;
+	
+	
+	public LocalStatelessSessionProxyFactoryBean() {
+	}
+	
+		
+	/**
+	 * @return the business interface of the EJB. Note that this
+	 * will normally be the superinterface of the EJBLocal interface.
+	 * Using a business methods interface is a best practice
+	 * when implementing EJBs.
+	 */
+	public Class getBusinessInterface() {
+		return businessInterface;
+	}
+
+	/**
+	 * Set the business interface of the EJB we're proxying
+	 * @param class1 set the business interface of the EJB
+	 */
+	public void setBusinessInterface(Class class1) {
+		this.businessInterface = class1;
+	}
+	
+
+	
+	/**
+	 * @see InitializingBean#afterPropertiesSet()
+	 */
+	public void setBeanFactory(BeanFactory bf) throws Exception {
+
+		if (this.businessInterface == null) 
+			throw new Exception("businessInterface property must be set in LocalStatelessSessionProxyFactoryBean");
+		
+		ProxyFactory pf = new ProxyFactory(new Class[] { this.businessInterface });
+		pf.addInterceptor(this);
+		this.proxy = pf.getProxy();
+	}
+
+	/**
+	 * @see FactoryBean#getObject()
+	 */
+	public Object getObject() throws BeansException {
+		return this.proxy;
+	}
+
+	/**
+	 * @see FactoryBean#isSingleton()
+	 */
+	public boolean isSingleton() {
+		return true;
+	}
+
+	/**
+	 * @see FactoryBean#getPropertyValues()
+	 */
+	public PropertyValues getPropertyValues() {
+		return null;
+	}
+
+}

@@ -1,6 +1,6 @@
 package org.aopalliance.intercept;
 
-import com.interface21.transaction.TransactionStatus;
+import org.springframework.transaction.TransactionStatus;
 
 import java.lang.reflect.Method;
 
