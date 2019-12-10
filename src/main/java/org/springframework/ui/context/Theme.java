@@ -9,7 +9,7 @@ import org.springframework.context.MessageSource;
  * @author Juergen Hoeller
  * @since 17.06.2003
  * @see ThemeSource
- * @see com.interface21.web.servlet.theme
+ * @see org.springframework.web.servlet.theme
  */
 public interface Theme {
 

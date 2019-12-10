@@ -31,15 +31,15 @@ import org.springframework.jdbc.core.SqlParameter;
  * <br/>An RDBMS operation is <b>not</b> a command, as a command isn't be reusable.
  * However, execute methods may take commands as arguments.
  * <br/>Subclasses should be Java beans, allowing easy configuration.
- * <br/>This class and subclasses throw runtime exceptions, defined in the com.interface21.dao
- * package (and as thrown by the com.interface21.jdbc.core package,
+ * <br/>This class and subclasses throw runtime exceptions, defined in the org.springframework.dao
+ * package (and as thrown by the org.springframework.jdbc.core package,
  * which the classes in this package use to perform raw JDBC actions).
  * <br/>Subclasses should set DataSource, sql and add
  * parameters, before invoking the compile() method.
  * The order in which parameters are added is significant.
  * The appropriate execute or update method can then be invoked.
- * @see com.interface21.dao
- * @see com.interface21.jdbc.core
+ * @see org.springframework.dao
+ * @see org.springframework.jdbc.core
  * @author Rod Johnson
  * @version $Id: RdbmsOperation.java,v 1.2 2003/05/28 16:39:14 jhoeller Exp $
  */

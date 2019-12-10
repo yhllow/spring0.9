@@ -52,7 +52,7 @@ import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
  * by obtaining the classloader at runtime, because this violates the EJB
  * programming restrictions.
  *
- * <p>Note: Regards property editors in com.interface21.beans.propertyeditors.
+ * <p>Note: Regards property editors in org.springframework.beans.propertyeditors.
  * Also explictly register the default ones to care for JREs that do not use
  * the thread context class loader for editor search paths.
  * Applications can either use a standard PropertyEditorManager to register a
@@ -85,7 +85,7 @@ public class BeanWrapperImpl implements BeanWrapper {
 			// register all editors in our standard package
 			PropertyEditorManager.setEditorSearchPath(new String[] {
 				"sun.beans.editors",
-				"com.interface21.beans.propertyeditors"
+				"org.springframework.beans.propertyeditors"
 			});
 		}
 		catch (SecurityException ex) {

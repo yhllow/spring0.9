@@ -34,7 +34,7 @@ import org.springframework.dao.CleanupFailureDataAccessException;
  *
  * <p>Note that the application must care about handling HibernateExceptions itself,
  * preferably via delegating to SessionFactoryUtils' convertHibernateAccessException
- * that converts them to ones that are compatible with the com.interface21.dao
+ * that converts them to ones that are compatible with the org.springframework.dao
  * exception hierarchy (like HibernateTemplate does).
  *
  * <p>Unfortunately, this interceptor cannot convert checked HibernateExceptions

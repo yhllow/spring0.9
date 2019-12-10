@@ -12,7 +12,7 @@ package org.springframework.dao;
 /**
  * Exception thrown on an optimistic locking violation. This exception
  * will generally be thrown by DAOs, rather than a resource
- * abstraction layer such as the com.interface21.jdbc.object JDBC abstraction layer.
+ * abstraction layer such as the org.springframework.jdbc.object JDBC abstraction layer.
  * @author Rod Johnson
  * @version $Id: OptimisticLockingFailureException.java,v 1.1.1.1 2003/02/11 08:10:19 johnsonr Exp $
  */ 

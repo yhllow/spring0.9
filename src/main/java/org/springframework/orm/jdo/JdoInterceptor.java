@@ -35,7 +35,7 @@ import org.springframework.dao.CleanupFailureDataAccessException;
  *
  * <p>Note that the application must care about handling JDOExceptions itself,
  * preferably via delegating to PersistenceManagerFactoryUtils' convertJdoAccessException
- * that converts them to ones that are compatible with the com.interface21.dao exception
+ * that converts them to ones that are compatible with the org.springframework.dao exception
  * hierarchy (jlike JdoTemplate does). As JDOExceptions are unchecked, they can simply
  * get thrown too, sacrificing generic DAO abstraction in terms of exceptions though.
  *

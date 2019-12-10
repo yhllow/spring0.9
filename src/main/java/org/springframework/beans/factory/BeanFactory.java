@@ -26,7 +26,7 @@ import org.springframework.beans.BeansException;
  * J2EE" for a discussion of the benefits of this approach.
  * <br/>Normally the BeanFactory will load bean definitions stored in
  * a configuration source (such as an XML document),
- * and uses the com.interface21.beans package to configure the beans. However,
+ * and uses the org.springframework.beans package to configure the beans. However,
  * an implementation could simply return Java objects it creates as
  * necessary directly in Java code.
  * There are no constraints on how the definitions could be stored: LDAP, RDBMS, XML,

@@ -135,7 +135,7 @@ public abstract class PersistenceManagerFactoryUtils {
 
 	/**
 	 * Convert the given JDOException to an appropriate exception from
-	 * the com.interface21.dao hierarchy.
+	 * the org.springframework.dao hierarchy.
 	 * @param ex JDOException that occured
 	 * @return the corresponding DataAccessException instance
 	 */

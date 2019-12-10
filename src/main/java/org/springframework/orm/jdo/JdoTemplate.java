@@ -10,7 +10,7 @@ import org.springframework.dao.DataAccessException;
 /**
  * Helper class that simplifies JDO data access code, and converts
  * JDOExceptions into JdoUsage/JdoSystemException, compatible to the
- * com.interface21.dao exception hierarchy.
+ * org.springframework.dao exception hierarchy.
  *
  * <p>The central method is "execute", supporting JDO code implementing
  * the JdoCallback interface. It provides JDO PersistenceManager handling
@@ -21,7 +21,7 @@ import org.springframework.dao.DataAccessException;
  * <p>Typically used to implement data access or business logic services that
  * use JDO within their implementation but are JDO-agnostic in their interface.
  * The latter resp. code calling the latter only have to deal with business
- * objects, query objects, and com.interface21.dao exceptions.
+ * objects, query objects, and org.springframework.dao exceptions.
  *
  * <p>Can be used within a service implementation via direct instantiation
  * with a PersistenceManagerFactory reference, or get prepared in an
@@ -109,8 +109,8 @@ public class JdoTemplate implements InitializingBean {
 	 * @throws RuntimeException in case of application exceptions thrown by
 	 * the action object
 	 * @see JdoTransactionManager
-	 * @see com.interface21.dao
-	 * @see com.interface21.transaction
+	 * @see org.springframework.dao
+	 * @see org.springframework.transaction
 	 */
 	public Object execute(JdoCallback action) throws DataAccessException, RuntimeException {
 		PersistenceManager pm = PersistenceManagerFactoryUtils.getPersistenceManager(this.persistenceManagerFactory, true);

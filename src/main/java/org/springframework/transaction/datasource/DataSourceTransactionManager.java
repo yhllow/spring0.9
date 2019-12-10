@@ -28,7 +28,7 @@ import org.springframework.util.ThreadObjectManager;
  * <p>Application code is required to retrieve the JDBC connection via
  * DataSourceUtils.getConnection(DataSource) instead of J2EE's standard
  * DataSource.getConnection. This is recommended anyway, as it throws
- * unchecked com.interface21.dao exceptions instead of checked SQLException.
+ * unchecked org.springframework.dao exceptions instead of checked SQLException.
  * All framework classes like JdbcTemplate use this strategy implicitly.
  * If not used with this transaction manager, the lookup strategy
  * behaves exactly like the common one - it can thus be used in any case.

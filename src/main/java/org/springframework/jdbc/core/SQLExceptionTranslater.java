@@ -16,7 +16,7 @@ import org.springframework.dao.DataAccessException;
 /**
  * Interface to be implemented by classes that can translate
  * between SQLExceptions and our data access strategy-agnostic
- * com.interface21.dao.DataAccessException.
+ * org.springframework.dao.DataAccessException.
  * <br/>Implementations can be generic (for example,
  * using SQLState codes for JDBC) or proprietary (for example,
  * using Oracle error codes) for greater precision.

@@ -4,7 +4,7 @@ package org.springframework.core;
  * Sub-interface that can be implemented by exceptions etc. that
  * are error coded. The error code is a String, rather than a number,
  * so it can be given user-readable values, such as "object.failureDescription".
- * These codes will be resolved by a com.interface21.context.MessageSource
+ * These codes will be resolved by a org.springframework.context.MessageSource
  * object.
  *
  * The message itself may contain placeholders for parameters that

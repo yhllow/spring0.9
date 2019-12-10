@@ -25,7 +25,7 @@ import org.springframework.transaction.support.TransactionTemplate;
  * @since 16-Mar-2003
  * @version $Revision: 1.6 $
  * @see TransactionTemplate
- * @see com.interface21.aop.interceptor.transaction.TransactionInterceptor
+ * @see org.springframework.aop.interceptor.transaction.TransactionInterceptor
  * @see AbstractPlatformTransactionManager
  * @see DataSourceTransactionManager
  * @see JtaTransactionManager

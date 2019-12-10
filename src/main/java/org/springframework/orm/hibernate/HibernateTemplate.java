@@ -13,7 +13,7 @@ import org.springframework.jndi.JndiObjectFactoryBean;
 /**
  * Helper class that simplifies Hibernate data access code, and converts
  * checked HibernateExceptions into unchecked HibernateJdbc/SystemExceptions,
- * compatible to the com.interface21.dao exception hierarchy.
+ * compatible to the org.springframework.dao exception hierarchy.
  *
  * <p>The central method is "execute", supporting Hibernate code implementing
  * the HibernateCallback interface. It provides Hibernate Session handling
@@ -24,7 +24,7 @@ import org.springframework.jndi.JndiObjectFactoryBean;
  * <p>Typically used to implement data access or business logic services that
  * use Hibernate within their implementation but are Hibernate-agnostic in
  * their interface. The latter resp. code calling the latter only have to deal
- * with business objects, query objects, and com.interface21.dao exceptions.
+ * with business objects, query objects, and org.springframework.dao exceptions.
  *
  * <p>Can be used within a service implementation via direct instantiation
  * with a SessionFactory reference, or get prepared in an application context
@@ -160,8 +160,8 @@ public class HibernateTemplate implements InitializingBean {
 	 * @throws RuntimeException in case of application exceptions thrown by
 	 * the action object
 	 * @see HibernateTransactionManager
-	 * @see com.interface21.dao
-	 * @see com.interface21.transaction
+	 * @see org.springframework.dao
+	 * @see org.springframework.transaction
 	 */
 	public Object execute(HibernateCallback action) throws DataAccessException, RuntimeException {
 		Session session = SessionFactoryUtils.getSession(this.sessionFactory, true);

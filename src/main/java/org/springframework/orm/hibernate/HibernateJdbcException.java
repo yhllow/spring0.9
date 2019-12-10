@@ -16,7 +16,7 @@ import org.springframework.dao.UncategorizedDataAccessException;
  * @author Juergen Hoeller
  * @since 02.05.2003
  * @see HibernateTemplate
- * @see com.interface21.dao
+ * @see org.springframework.dao
  */
 public class HibernateJdbcException extends UncategorizedDataAccessException {
 

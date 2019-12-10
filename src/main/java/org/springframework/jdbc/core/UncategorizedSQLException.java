@@ -16,7 +16,7 @@ import org.springframework.dao.UncategorizedDataAccessException;
 /**
  * Exception thrown when we can't classify a SQLException into 
  * one of our generic data access exceptions
- * @see com.interface21.dao
+ * @see org.springframework.dao
  * @author Rod Johnson
  * @version $Id: UncategorizedSQLException.java,v 1.1.1.1 2003/02/11 08:10:23 johnsonr Exp $
  */

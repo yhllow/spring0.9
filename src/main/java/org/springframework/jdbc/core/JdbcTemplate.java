@@ -36,7 +36,7 @@ import org.springframework.jndi.JndiObjectFactoryBean;
  * This class executes SQL queries or updates, initating iteration over
  * ResultSets and catching JDBC exceptions and translating them to
  * the generic, more informative, exception hierarchy defined in
- * the com.interface21.dao package.
+ * the org.springframework.dao package.
  *
  * <p>Code using this class need only implement callback interfaces,
  * giving them a clearly defined contract. The PreparedStatementCreator callback
@@ -64,7 +64,7 @@ import org.springframework.jndi.JndiObjectFactoryBean;
  * @author Yann Caroff
  * @author Thomas Risberg
  * @author Isabelle Muszynski
- * @see com.interface21.dao
+ * @see org.springframework.dao
  * @version $Id: JdbcTemplate.java,v 1.20 2003/06/06 14:34:43 jhoeller Exp $
  * @since May 3, 2001
  * @see JndiObjectFactoryBean

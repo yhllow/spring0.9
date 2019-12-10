@@ -21,7 +21,7 @@ public class HtmlEscapeTag extends TagSupport {
 	public static final String HTML_ESCAPE_CONTEXT_PARAM = "defaultHtmlEscape";
 
 	/** PageContext attribute for page-level default */
-	public static final String HTML_ESCAPE_PAGE_ATTR = "com.interface21.web.servlet.tags.HTML_ESCAPE";
+	public static final String HTML_ESCAPE_PAGE_ATTR = "org.springframework.web.servlet.tags.HTML_ESCAPE";
 
 	private boolean defaultHtmlEscape = false;
 
