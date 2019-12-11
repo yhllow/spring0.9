@@ -9,9 +9,13 @@ public class Test {
     public static void main(String[] args) {
         try {
             ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-            context.getBean("bean");
+            ((Test) context.getBean("test")).test();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void test() {
+        System.out.println("this is a bean from spring");
     }
 }
