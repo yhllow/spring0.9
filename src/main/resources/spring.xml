@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans SYSTEM "C:\Workspaces\Source\spring0.9\src\test\resources\spring-beans.dtd">
+<!DOCTYPE beans SYSTEM "spring-beans.dtd">
 <beans>
-    <bean id="test" class="org.springframework.my.ibatis.Test">
+    <bean id="test" class="org.springframework.Test">
     </bean>
 </beans>
