@@ -36,6 +36,10 @@ import org.springframework.beans.BeansException;
  * @since 13 April 2001
  * @version $RevisionId$
  */
+
+/**
+ * 对象工厂
+ */
 public interface BeanFactory {
 
 	/** 
@@ -49,6 +53,7 @@ public interface BeanFactory {
 	 * @return the instance of the bean
 	 * @throws NoSuchBeanDefinitionException if there's no such bean definition
 	 */
+	// 根据名称获取对象
     Object getBean(String name) throws BeansException;
 	
 	/** 
@@ -68,6 +73,7 @@ public interface BeanFactory {
 	 * @throws BeanNotOfRequiredTypeException if the bean is not of the required type
 	 * @throws NoSuchBeanDefinitionException if there's no such bean definition
 	 */
+	// 根据名称和对象类型获取对象
 	Object getBean(String name, Class requiredType) throws BeansException; 		 
 	
 	/**
@@ -76,6 +82,7 @@ public interface BeanFactory {
 	 * @throws NoSuchBeanDefinitionException if there is no bean with the given name
 	 * @return is this bean a singleton
 	*/
+	// 是否单例对象
 	boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
 
 	/**
@@ -83,6 +90,7 @@ public interface BeanFactory {
 	 * @param name the bean name to check for aliases
 	 * @return the aliases, or an empty array if none
 	 */
+	// 获取对象别名
 	String[] getAliases(String name);
 
 }

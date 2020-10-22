@@ -9,10 +9,10 @@
 
 package org.springframework.context;
 
-import java.io.InputStream;
-import java.io.IOException;
-
 import org.springframework.beans.factory.ListableBeanFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /** 
  * Interface to provide configuration for an application. This is
@@ -38,6 +38,10 @@ import org.springframework.beans.factory.ListableBeanFactory;
  * @author Rod Johnson
  * @version $Revision: 1.8 $
  */
+
+/**
+ * 应用上下文，继承MessageSource（数据源）、ListableBeanFactory（可枚举对象工厂）
+ */
 public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	
 	/**
@@ -45,18 +49,21 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * and this is the root of the context hierarchy.
 	 * @return the parent context, or null if there is no parent
 	 */
+	// 获取父上下文
 	ApplicationContext getParent();
 	
 	/**
 	 * Return a friendly name for this context.
 	 * @return a display name for this context
 	*/
+	// 上下文简称
 	String getDisplayName();
 
 	/**
 	 * Return the timestamp when this context was first loaded
 	 * @return the timestamp (ms) when this context was first loaded
 	 */
+	// 上下文首次被加载的时间（毫秒）
 	long getStartupDate();
 
 	/**
@@ -65,6 +72,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * add additional properties. It must always be a bean.
 	 * @return context options (must not be null).
 	 */
+	// 上下文参数
 	ContextOptions getOptions();
 
 	/**
@@ -72,6 +80,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * might for example be an XML file, properties file or relational database schema.
 	 * @throws ApplicationContextException if the config cannot be loaded
 	 */
+	// （重新）加载上下文
 	void refresh() throws ApplicationContextException;
 
 	/**
@@ -80,6 +89,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * or application-specific events.
 	 * @param event event to publish
 	 */
+	// 通知所有注册了应用事件的监听器
 	void publishEvent(ApplicationEvent event);
 
 	/**
@@ -96,6 +106,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * @return InputStream for the specified resource
 	 * @throws IOException exception when opening the specified resource
 	 */
+	// 加载资源为输入流
 	InputStream getResourceAsStream(String location) throws IOException;
 
 	/**
@@ -108,6 +119,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * for evaluating relative paths.
 	 * @return the resource base path (ending with a separator), or null
 	 */
+	// 获取资源基础路径
 	String getResourceBasePath();
 
 	/**
@@ -119,6 +131,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * @param key object key
 	 * @param o object to put
 	 */
+	// 保存共享对象（有效的）
 	void shareObject(String key, Object o);
 	
 	/**
@@ -126,6 +139,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * @return the object, or null if no object is known under
 	 * this name (this is not an error).
 	 */
+	// 获取共享对象
 	Object sharedObject(String key);
 	
 	/** 
@@ -134,6 +148,7 @@ public interface ApplicationContext extends MessageSource, ListableBeanFactory {
 	 * @param key the object was added with
 	 * @return the object if it was found, or null.
 	 */
+	// 删除共享对象
 	Object removeSharedObject(String key);
 		
 }

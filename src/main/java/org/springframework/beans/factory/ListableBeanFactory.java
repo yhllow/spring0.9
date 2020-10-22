@@ -22,12 +22,14 @@ package org.springframework.beans.factory;
  * @author  Rod Johnson
  * @since 16 April 2001
  */
+// 可枚举对象工厂
 public interface ListableBeanFactory extends BeanFactory {
 
 	/**
 	 * Return the number of beans defined in the factory
 	 * @return the number of beans defined in the factory
 	 */
+	// 获取对象数
 	int getBeanDefinitionCount();
 
 	/**
@@ -35,6 +37,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * @return the names of all beans defined in this factory.
 	 * Returns the empty String[], rather than null, if no beans are defined.
 	 */
+	// 枚举所有对象名称
 	String[] getBeanDefinitionNames();
 	
 	/**
@@ -44,6 +47,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * @return the names of beans matching the given object type 
 	 * (including subclasses). Never returns null.
 	 */
+	// 根据对象类型枚举对象名称
 	String[] getBeanDefinitionNames(Class type);
     
 }
